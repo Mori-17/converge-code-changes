@@ -1,7 +1,7 @@
 interface:
   display_name: "代码变更收敛"
-  short_description: "在修复和反复修改中消除旧分支、兜底与过程叙述，收敛成唯一的当前实现"
-  default_prompt: "Use $converge-code-changes to revise this implementation into one clean current-state solution."
+  short_description: "在新建、修复和删除任务中阻止旧方案、补丁与负向约束泄漏到最终产物"
+  default_prompt: "Use $converge-code-changes to implement exclusions as absence and converge this work into one clean current-state result."
 
 policy:
   allow_implicit_invocation: true

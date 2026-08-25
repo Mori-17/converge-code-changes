@@ -1,6 +1,6 @@
 ---
 name: converge-code-changes
-description: Converge code changes into one clean current-state implementation when fixing bugs, revising an earlier attempt after feedback, replacing or removing behavior, or cleaning patch residue. Use especially when a request says 不要、删掉、去掉、改回、清理、重做, or when a change might add fallback, compatibility branches, duplicate paths, or comments about rejected approaches.
+description: Use whenever an implementation request contains negative or subtractive constraints such as do not, no, only, avoid, 不要、不需要、删除、去掉、仅, or asks to revise, replace, remove, clean up, or fix prior work. Converge the result into one current-state implementation and prevent excluded ideas from reappearing as fallbacks, branches, comments, documentation, labels, disclaimers, or visible copy.
 ---
 
 # Converge Code Changes
@@ -26,6 +26,18 @@ Apply these distinctions:
 - “Revert” requires an identifiable target state. Do not infer a full behavioral revert merely from words such as “clean up.”
 
 If two interpretations would materially change user-visible behavior and repository evidence cannot resolve them, ask one focused question before editing.
+
+## Implement exclusions as absence
+
+A negative requirement normally defines what the final artifact must omit. It is not a request to create copy explaining the omission.
+
+- “Do not add X” means X is absent from the implementation and interface. Do not add a “No X,” “X is not used,” or “Unlike X” label, note, badge, section, comment, or documentation entry.
+- Do not promote implementation facts or prompt constraints into visible product copy. A fixed question set, local storage, absence of AI, non-diagnostic scoring, unsupported behavior, or a rejected technology does not need to be advertised merely because it was discussed while building the product.
+- Do not create unsolicited assurance, methodology, limitation, privacy, age-gate, or “method and boundaries” blocks merely to prove that requirements were followed.
+- When the user names text or modules to remove, treat those strings and concepts as tombstoned on the affected surface for the current task. Remove their containers and owned layout; do not paraphrase, shorten, rename, relocate, or replace them with another explanation of the same excluded concept.
+- If the remaining experience needs copy, describe what the product currently does in direct positive terms. Do not define it through a catalog of things it is not.
+
+Keep a disclosure only when the user explicitly requests it or current legal, safety, privacy, consent, or material-risk evidence requires users to see it. Make it minimal, factual, and located at the relevant decision point. Do not invent a compliance requirement; if omitting a possibly required disclosure would create material risk and evidence is unclear, ask before changing it.
 
 ## Fix the violated invariant at its source
 
@@ -76,6 +88,7 @@ Before final verification, inspect the complete diff and relevant touched files.
 - The behavior has one canonical implementation path.
 - No speculative fallback or compatibility layer remains.
 - Comments, docs, tests, and names describe the current system rather than the change history.
+- Negative constraints are realized as absence; no unrequested disclaimer, assurance block, or paraphrase of an excluded concept appears in user-facing copy.
 - Removed UI or features leave no orphaned visual, structural, configuration, test, or documentation residue.
 - Accepted behavior was not accidentally removed while cleaning its former patch structure.
 - Unrelated user changes remain untouched.
@@ -84,4 +97,4 @@ Then run proportionate non-visual checks that exercise the resulting behavior an
 
 ## Report the result
 
-Describe the final behavior, the root cause or invariant when relevant, and the verification performed. It is fine to tell the user that obsolete residue was removed; do not write that history back into the product. If a fallback or compatibility path remains, identify the present evidence that requires it.
+Describe the final behavior, the root cause or invariant when relevant, and the verification performed. Summarize removals by category instead of repeating every forbidden phrase unless exact matching is useful evidence. It is fine to tell the user that obsolete residue was removed; do not write that history back into the product. If a fallback or compatibility path remains, identify the present evidence that requires it.
