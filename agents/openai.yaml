@@ -1,7 +1,7 @@
 interface:
   display_name: "代码变更收敛"
-  short_description: "在新建、修复和删除任务中阻止旧方案、补丁与负向约束泄漏到最终产物"
-  default_prompt: "Use $converge-code-changes to implement exclusions as absence and converge this work into one clean current-state result."
+  short_description: "点名删除内容时清除全部实例、相关残留与同义替代，并收敛最终实现"
+  default_prompt: "Use $converge-code-changes to remove every explicitly named target and its owned residue without paraphrasing or replacing it."
 
 policy:
   allow_implicit_invocation: true

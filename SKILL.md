@@ -1,6 +1,6 @@
 ---
 name: converge-code-changes
-description: Use whenever an implementation request contains negative or subtractive constraints such as do not, no, only, avoid, 不要、不需要、删除、去掉、仅, or asks to revise, replace, remove, clean up, or fix prior work. Converge the result into one current-state implementation and prevent excluded ideas from reappearing as fallbacks, branches, comments, documentation, labels, disclaimers, or visible copy.
+description: Use whenever a user explicitly names text, UI copy, modules, files, code, behaviors, or concepts to delete or remove. Also use for negative or subtractive constraints such as do not, no, only, avoid, 不要、不需要、删除、去掉、仅, and for revisions, cleanup, or bug fixes. Converge the result into one current-state implementation without residue, paraphrases, disclaimers, or duplicate paths.
 ---
 
 # Converge Code Changes
@@ -26,6 +26,18 @@ Apply these distinctions:
 - “Revert” requires an identifiable target state. Do not infer a full behavioral revert merely from words such as “clean up.”
 
 If two interpretations would materially change user-visible behavior and repository evidence cannot resolve them, ask one focused question before editing.
+
+## Treat named deletion as a hard trigger
+
+When the user explicitly lists, quotes, marks, or otherwise identifies items to delete, treat every named item as a required deletion target, not as an example, preference, or optional suggestion.
+
+- Resolve each target to its exact occurrences, semantic equivalents on the affected surface, owning container, and directly owned dependency cone.
+- If the same named text or concept appears more than once in scope, remove every occurrence.
+- Remove the target together with layout, styles, handlers, assets, tests, documentation, and configuration that exist only for it.
+- Do not leave an empty shell, placeholder, heading, separator, spacing rule, or navigation entry after its content is removed.
+- Do not replace the target with a paraphrase, shorter disclaimer, renamed module, or another expression of the same excluded concept.
+- Preserve unrelated current behavior and shared infrastructure that still has active consumers.
+- Before reporting completion, account for every named target: removed, deliberately retained with present-tense evidence, or blocked by a specific constraint. Never silently skip an item.
 
 ## Implement exclusions as absence
 
